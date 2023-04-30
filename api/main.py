@@ -2,7 +2,10 @@ from typing import Union
 
 from fastapi import FastAPI
 
+from auth import auth
+
 app = FastAPI()
+app.include_router(auth.router)
 
 
 @app.get("/")

@@ -4,6 +4,6 @@ services:
     build: api/
     #dockerfile: api/Dockerfile
     volumes:
-      - ./api/app:/code/app
+      - ./api/:/code/
     ports:
       - "8000:8000"
