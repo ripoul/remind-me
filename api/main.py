@@ -1,11 +1,13 @@
 from fastapi import FastAPI, Request, Response
 
 from auth import auth
+from auth import users
 from database import engine, SessionLocal
 import models
 
 app = FastAPI()
 app.include_router(auth.router)
+app.include_router(users.router)
 models.Base.metadata.create_all(bind=engine)
 
 
